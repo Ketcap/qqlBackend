@@ -6,8 +6,7 @@ export default {
 			const Brands = await Brand.find(query);
 			return Brands.map(b => (b._id = b._id.toString, b));
 		},
-		getBrand: async (parent, args, { Brand }) => await Brand.findById(args),
-		Brand: async (parent, args, { Brand }) => console.log('****-------****_-______')
+		getBrand: async (parent, args, { Brand }) => await Brand.findById(args)
 	},
 	Mutation: {
 		createBrand: async (parent, args, { Brand }) => await new Brand({ ...args, created_date: new Date() }).save()

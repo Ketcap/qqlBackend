@@ -3,7 +3,7 @@ export default {
 		`Product{
 			_id:String
 			item_name: String
-			brand: Brand ? ? ?? ?? ??  ?
+			brand: String
 			default_type: Int
 			gender: String
 			type: String
