@@ -9,5 +9,7 @@ export default {
 	Mutation: {
 		...Brand.Mutation,
 		...Product.Mutation
-	}
+	},
+	...Product.Nested
+
 };

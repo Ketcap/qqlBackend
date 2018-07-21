@@ -8,7 +8,7 @@ export default {
 		}
 	`,
 	query: `
-		getBrands(name:String):[Brand]!
+		getBrands(filter: Filter,name:String):[Brand]!
 		getBrand(_id:String):[Brand]!`
 	,
 	mutation: `

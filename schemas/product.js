@@ -3,7 +3,7 @@ export default {
 		`Product{
 			_id:String
 			item_name: String
-			brand: String
+			brand: Brand
 			default_type: Int
 			gender: String
 			type: String
@@ -12,13 +12,12 @@ export default {
 	}`,
 	query: `
 		getProducts(
-			brand:String
 			item_name:String
 			gender:String
 			type:String
 			type_2:String
 		):[Product]!
-		getProduct(_id:String):[Product]!
+		getProduct(_id:String):Product!
 	`,
 	mutation: `
 		createProduct(

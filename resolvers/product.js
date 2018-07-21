@@ -10,5 +10,12 @@ export default {
 	},
 	Mutation: {
 		createProduct: async (parent, args, { Product }) => await new Product({ ...args, created_date: new Date() }).save()
+	},
+	Nested: {
+		Product: {
+			brand: async ({ brand }, args, { Brand }) => {
+				return await Brand.findOne({ _id: brand, ...args });
+			}
+		}
 	}
 }

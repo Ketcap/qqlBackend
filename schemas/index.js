@@ -11,5 +11,9 @@ export default `
 		${Product.mutation}
 		${Brand.mutation}
 	}
+	input Filter {
+		sort: String,
+		order:String
+	}
 	
 `;
