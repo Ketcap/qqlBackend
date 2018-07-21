@@ -1,6 +1,7 @@
 
 import express from 'express';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 import { graphiqlExpress, graphqlExpress } from 'apollo-server-express'
 import { makeExecutableSchema } from 'graphql-tools'
 import mongoose from 'mongoose';
@@ -26,6 +27,7 @@ mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${proc
 
 const app = express();
 
+app.use(cors());
 app.use(
 	'/graphql',
 	bodyParser.json(),
