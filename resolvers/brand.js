@@ -3,7 +3,8 @@ export default {
 		getBrands: async (parent, { filter, ...args }, { Brand }) => {
 			const query = { ...args };
 			query.name ? query.name = { $regex: query.name } : null;
-			const Brands = await Brand.find(query).sort({ [filter.sort]: filter.order });
+			const sort = filter && { [filter.sort]: filter.order };
+			const Brands = await Brand.find(query).sort(sort);
 			return Brands.map(b => (b._id = b._id.toString, b));
 		},
 		getBrand: async (parent, args, { Brand }) => await Brand.findById(args)
